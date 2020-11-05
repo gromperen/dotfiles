@@ -23,6 +23,9 @@ autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 -Wshadow -Wall % -o 
 autocmd filetype cpp nnoremap <F10> :!./%<<CR>
 autocmd filetype cpp nnoremap <C-C> :silent! s/^\(\s*\)/\1\/\/<CR> :silent! s/^\(\s*\)\/\/\/\//\1<CR>
 
+autocmd filetype c nnoremap <F9> :w <bar> !gcc -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L % -o %:r<CR>
+autocmd filetype c nnoremap <F10> :!./%<<CR>
+
 
 set nu
 augroup numbertoggle
@@ -30,3 +33,4 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave * set rnu
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
+
