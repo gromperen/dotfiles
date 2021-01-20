@@ -1,0 +1,16 @@
+autocmd BufNewFile *.cpp -r ~/programming/templates/template.cpp
+inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{ {
+inoremap {} {}
+inoremap ( ()<Left>
+inoremap () ()
+inoremap [ []<Left>
+
+
+"nnoremap <silent> <F8> :update<cr>:make %<<cr>
+"autocmd filetype cpp nnoremap <F10> :!./%<<CR>
+autocmd filetype cpp nnoremap <F2> :vsplit %<.in<CR>
+autocmd filetype cpp nnoremap <F8> :!g++ -std=c++11 % -Wall -g -o %<.out<CR>
+autocmd filetype cpp nnoremap <F9> :!./%<.out < %<.in<CR>
+autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
